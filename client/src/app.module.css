@@ -1,0 +1,8 @@
+.header {
+    color: blue;
+}
+
+.cardLayout {
+    display: flex;
+    flex-direction: row;
+}
