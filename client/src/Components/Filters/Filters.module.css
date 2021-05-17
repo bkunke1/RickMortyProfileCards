@@ -1,0 +1,18 @@
+.active {
+    color: yellow;
+    background-color: green;
+}
+
+button {
+    margin: 2px;
+}
+
+ul {
+    list-style: none;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(70, 206, 70);
+
+}

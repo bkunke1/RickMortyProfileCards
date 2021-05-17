@@ -1,8 +1,31 @@
+@font-face {
+  font-family: 'get_schwiftyregular';
+  src: local('get_schwiftyregular'),
+    url(./fonts/Get-Schwifty-Font/get_schwifty.ttf) format('truetype');
+}
+
 .header {
-    color: blue;
+  font-family: 'get_schwiftyregular';
+  font-size: 2em;
+  color: #07afc6;
+  -webkit-text-fill-color: #07afc6; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: .1px;
+  -webkit-text-stroke-color: #cbd349;
+  text-shadow: 1px 1px #B7CF46;
+  text-align: center;
 }
 
 .cardLayout {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;  
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+body {
+    background-color: #100e17;
+}
+
+.sortAndFilterSection {
+    text-align: center;
 }

@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+}
+
+.cardContainer {
+  display: flex;
+  background-color: #100e17;
+  padding: 1rem;
+}
+
+.card {
+  min-width: 250px;
+  /* height: 350px; */
+  border-radius: 16px;
+  background-color: #17141d;
+  box-shadow: -1rem 0 3rem #000;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  transition: 0.2s;
+  border-color: color;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.tags div {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border: 3px solid #28242f;
+  border-radius: 2rem;
+}
+
+.card .category-title {
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.card .articleTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #07afc6;
+  
+}
+
+.card .articleHeader {
+  margin-bottom: auto;
+  margin: auto;
+  width: 100%;
+}
+
+.card .imageLayout {
+  margin: auto;
+}
+
+.card .image {
+  margin-bottom: 1rem;
+  margin-top: 1rem;  
+}
+
+.card img {
+  border-radius: 10px;
+}
+
+.card .name {
+  color: #cbd349;
+}
+
+.card .stats {
+}
+
+.card:not(:first-child) {
+  margin-left: -130px;
+}
+
+.card:hover {
+  transform: translateY(-1rem);
+}
+
+.card:hover ~ .card {
+  transform: translateX(130px);
+}
