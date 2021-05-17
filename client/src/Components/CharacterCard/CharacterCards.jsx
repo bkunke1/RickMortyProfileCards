@@ -14,17 +14,14 @@ export default class Card extends React.Component {
     this.origin = props.props.origin.name;
     this.image = props.props.image;
     this.episode = props.props.episode;
-    this.selectCharacterHandler = props.selectCharacterHandler
+    this.selectCharacterHandler = props.selectCharacterHandler;
   }
 
   selectChar() {
-    console.log(this);
+    //  Binding in the constructor function, the 'this' keyword now refers to the component object
     this.selectCharacterHandler(this.name);
-    /*
-    Thanks to the binding in the constructor function,
-    the 'this' keyword now refers to the component object
-    */
   }
+
   render() {
     return (
       <div key={this.id}>
@@ -33,10 +30,14 @@ export default class Card extends React.Component {
             <header className={styles.articleHeader}>
               <h2 className={styles.articleTitle}>{this.name}</h2>
             </header>
-
             <div className={styles.imageLayout}>
               <div className={styles.image}>
-                <img src={this.image} alt={this.name} width="150" height="150" />
+                <img
+                  src={this.image}
+                  alt={this.name}
+                  width="150"
+                  height="150"
+                />
               </div>
             </div>
             <div className={styles.stats}>
@@ -50,16 +51,14 @@ export default class Card extends React.Component {
               )}
             </div>
             <div className={styles.name}>Origin: {this.origin}</div>
-
             <div className={styles.tags}>
               <div>
-                <h3>Total Episodes: {this.episode.length}</h3>
+                <h2>Total Episodes: {this.episode.length}</h2>
               </div>
             </div>
           </div>
         </div>
       </div>
-    )
-    
+    );
   }
 }

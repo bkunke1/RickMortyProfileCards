@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 
 export const GET_CHARACTERS = gql`
-query {
+  query {
     characters {
       results {
         id
@@ -27,9 +27,9 @@ query {
         image
         episode {
           id
-            name
-            air_date
-            episode
+          name
+          air_date
+          episode
         }
       }
     }

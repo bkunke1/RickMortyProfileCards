@@ -4,9 +4,7 @@ import styles from './Footer.module.css';
 export default function Footer() {
   return (
     <div className={styles.footer}>
-        <a href="#top">Back to top ^</a>
-      
-        
+      <a href="#top">Back to top ^</a>
     </div>
   );
 }

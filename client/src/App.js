@@ -1,48 +1,27 @@
 import Footer from './Components/Footer/Footer';
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  HttpLink,
-  from,
-  gql,
-} from '@apollo/client';
-import { onError } from '@apollo/client/link/error';
-import CharacterCards from './Components/CharacterCard/CharacterCards';
-import CharCard from './Components/CharCard/CharCard';
-import Filters from './Components/Filters/Filters';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import styles from './app.module.css';
 import React, { useState } from 'react';
-// Bootstrap Components
 import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/esm/Row';
 import CardArea from './Components/CardArea/CardArea';
 
-// const errorLink = onError(({ graphqlErrors, networkError }) => {
-//   if (graphqlErrors) {
-//     graphqlErrors.map(({ message, location, path }) => {
-//       alert(`Graphq; error ${message}`);
-//     });
-//   }
-// });
-
-// const link = from([
-//   errorLink,
-//   new HttpLink({ uri: 'https://rickandmortyapi.com/graphql' }),
-// ]);
-
+// setting up client to use graphql with Apollo
 const client = new ApolloClient({
   uri: 'https://rickandmortyapi.com/graphql',
   cache: new InMemoryCache(),
 });
 
 function App() {
-  const [selectedCardState, setSelectedCardState] = useState('Select a Character!');
+  const [selectedCardState, setSelectedCardState] = useState(
+    'Select a Character!'
+  );
 
+  // state management fn passed as props down to class based card components to lift state of selected character card
   const selectCharacterHandler = (selectedCharacter) => {
     if (selectedCharacter) {
       console.log(selectedCharacter);
-      setSelectedCardState(selectedCharacter)
+      setSelectedCardState(selectedCharacter);
     }
   };
 
@@ -53,23 +32,11 @@ function App() {
           <div className={styles.header}>
             <h1 id="top">Rick and Morty Profiles</h1>
             <h3>{selectedCardState}</h3>
-          </div>                    
+          </div>
         </Row>
-        {/* <Row>
-          <div className={styles.sortAndFilterSection}>
-            <p>Filters</p>
-            <Filters />
-          </div>
-        </Row> */}
-        {/* original cards */}
-        {/* <Row>
-          <div className={styles.cardLayout}>
-            <CharCard selectCharacterHandler={selectCharacterHandler} />
-          </div>
-        </Row> */}
         <Row>
-        <div className={styles.cardLayout}>
-            <CardArea selectCharacterHandler={selectCharacterHandler}/>
+          <div className={styles.cardLayout}>
+            <CardArea selectCharacterHandler={selectCharacterHandler} />
           </div>
         </Row>
         <Row>

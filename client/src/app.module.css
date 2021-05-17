@@ -8,24 +8,20 @@
   font-family: 'get_schwiftyregular';
   font-size: 2em;
   color: #07afc6;
-  -webkit-text-fill-color: #07afc6; /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: .1px;
+  -webkit-text-stroke-width: 0.1px;
   -webkit-text-stroke-color: #cbd349;
-  text-shadow: 1px 1px #B7CF46;
+  text-shadow: 1px 1px #b7cf46;
   text-align: center;
+  margin: 0;
 }
 
 .cardLayout {
   display: flex;
-  flex-direction: row;  
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 body {
-    background-color: #100e17;
-}
-
-.sortAndFilterSection {
-    text-align: center;
+  background-color: #100e17;
 }

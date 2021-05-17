@@ -1,13 +1,13 @@
 .footer {
-    color: rgb(146, 145, 145);
-    text-align: center;
-    margin: 1rem;
+  color: rgb(146, 145, 145);
+  text-align: center;
+  margin: 1rem;
 }
 
 a {
-    color:rgb(146, 145, 145);
+  color: rgb(146, 145, 145);
 }
 
 a:hover {
-    color: lightskyblue;
+  color: lightskyblue;
 }
