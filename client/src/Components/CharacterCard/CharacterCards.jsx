@@ -12,6 +12,7 @@ export default class Card extends React.Component {
     this.type = props.props.type;
     this.gender = props.props.gender;
     this.origin = props.props.origin.name;
+    this.location = props.props.location.name;
     this.image = props.props.image;
     this.episode = props.props.episode;
     this.selectCharacterHandler = props.selectCharacterHandler;
@@ -51,6 +52,7 @@ export default class Card extends React.Component {
               )}
             </div>
             <div className={styles.name}>Origin: {this.origin}</div>
+            <div className={styles.name}>Last Known Location: {this.location}</div>
             <div className={styles.tags}>
               <div>
                 <h2>Total Episodes: {this.episode.length}</h2>
