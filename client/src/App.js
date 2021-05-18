@@ -13,9 +13,10 @@ const client = new ApolloClient({
 });
 
 function App() {
-  const [selectedCardState, setSelectedCardState] = useState(
-    'Select a Character!'
-  );
+  const [selectedCardState, setSelectedCardState] = useState('Select a Character!');
+  const [paginationState, setPaginationState] = useState(1);
+
+  
 
   // state management fn passed as props down to class based card components to lift state of selected character card
   const selectCharacterHandler = (selectedCharacter) => {
@@ -36,11 +37,11 @@ function App() {
         </Row>
         <Row>
           <div className={styles.cardLayout}>
-            <CardArea selectCharacterHandler={selectCharacterHandler} />
+            <CardArea selectCharacterHandler={selectCharacterHandler} paginationState={paginationState}/>
           </div>
         </Row>
         <Row>
-          <Footer />
+          <Footer setPaginationState={setPaginationState} paginationState={paginationState}/>
         </Row>
       </Container>
     </ApolloProvider>

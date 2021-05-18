@@ -1,10 +1,53 @@
 import React from 'react';
-import { useQuery } from '@apollo/client';
-import { GET_CHARACTERS } from '../../GraphQL/Queries';
+import { useQuery, gql } from '@apollo/client';
 import CharacterCard from '../CharacterCard/CharacterCards';
 
 export default function CardArea(props) {
-  const { error, loading, data } = useQuery(GET_CHARACTERS);
+    const page = props.paginationState;
+
+  const { error, loading, data } = useQuery(
+    gql`
+    query {  
+      characters(page: ${page}) {
+        info {
+            count
+            pages
+            next
+            prev
+          }
+        results {        
+          id
+          name
+          status
+          species
+          type
+          gender
+          origin {
+            id
+            name
+            type
+            dimension
+            created
+          }
+          location {
+            id
+            name
+            type
+            dimension
+            created
+          }
+          image
+          episode {
+            id
+            name
+            air_date
+            episode
+          }
+        }
+      }
+    }
+    `
+  );
 
   // loading message prior to loading api data
   if (loading) return <p>Loading...</p>;
